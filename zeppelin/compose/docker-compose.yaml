@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  zeppelin:
+    build:
+      context: ../
+    environment:
+    - ZEPPELIN_LOG_DIR:/opt/zeppelin/logs
+    - ZEPPELIN_NOTEBOOK_DIR:/opt/zeppelin/notebook
+    ports:
+    - "8080:8080"
+    volumes:
+    - zeppelin-data:/opt/zeppelin/data
+    - zeppelin-logs:/opt/zeppelin/logs
+    - zeppelin-notebook:/opt/zeppelin/notebook
+
+volumes:
+  zeppelin-data: {}
+  zeppelin-logs: {}
+  zeppelin-notebook: {}
