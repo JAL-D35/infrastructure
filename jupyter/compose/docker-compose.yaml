@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  jupyter:
+    build:
+      context: ../
+    ports:
+    - "8888:8888"
+    volumes:
+    - jupyter-work:/home/jovyan/work
+
+volumes:
+  jupyter-work: {}
